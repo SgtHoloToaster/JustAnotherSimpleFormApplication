@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Interfaces
+namespace JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Abstract
 {
     public interface IFilter<T>
     {

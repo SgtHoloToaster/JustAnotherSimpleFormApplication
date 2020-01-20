@@ -1,4 +1,4 @@
-﻿namespace JustAnotherSimpleFormApplication.Data.Interface.Enums
+﻿namespace JustAnotherSimpleFormApplication.ApiInterface.Enums
 {
     public enum ComparisonTypeEnum
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustAnotherSimpleFormApplication.Data.Interface.Models.Interfaces
+namespace JustAnotherSimpleFormApplication.Data.Interface.Models.Abstract
 {
     public interface IQuery<T>
     {

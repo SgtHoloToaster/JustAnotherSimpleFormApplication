@@ -1,4 +1,4 @@
-﻿using JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Interfaces;
+﻿using JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Abstract;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;

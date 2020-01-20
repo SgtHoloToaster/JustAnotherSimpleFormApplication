@@ -1,5 +1,5 @@
-﻿using JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Interfaces;
-using JustAnotherSimpleFormApplication.Data.Interface.Models.Interfaces;
+﻿using JustAnotherSimpleFormApplication.Data.Interface.Models.Filters.Abstract;
+using JustAnotherSimpleFormApplication.Data.Interface.Models.Abstract;
 using System.Collections.Generic;
 
 namespace JustAnotherSimpleFormApplication.Data.Interface.Models
