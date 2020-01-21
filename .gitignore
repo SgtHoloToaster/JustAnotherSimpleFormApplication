@@ -1,9 +1,6 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-.vs
+﻿.vs
 bin
 obj
 node_modules
-/JustAnotherSimpleFormApplication/wwwroot/dist
+/src/JustAnotherSimpleFormApplication.Web/wwwroot/dist
+
