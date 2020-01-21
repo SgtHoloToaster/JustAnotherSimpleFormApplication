@@ -16,9 +16,7 @@ namespace JustAnotherSimpleFormApplication.Core.Services
             return this;
         }
 
-        public IQuery<T> Build()
-        {
-            return new Query<T>(_filters);
-        }
+        public IQuery<T> Build() => 
+            new Query<T>(_filters);
     }
 }

@@ -1,4 +1,4 @@
-﻿using JustAnotherSimpleFormApplication.Data.Interface.Models;
+﻿using JustAnotherSimpleFormApplication.Data.Interface.Models.Abstract;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
@@ -8,6 +8,6 @@ namespace JustAnotherSimpleFormApplication.Data.Interface.Repositories
     {
         void Add(JObject form);
 
-        IEnumerable<JObject> GetList(Query<JObject> query);
+        IEnumerable<JObject> GetList(IQuery<JObject> query);
     }
 }

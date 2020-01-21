@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JustAnotherSimpleFormApplication.Core.Services.Abstract;
+using JustAnotherSimpleFormApplication.Data.Interface.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JustAnotherSimpleFormApplication.Controllers.Api
 {
@@ -11,16 +9,27 @@ namespace JustAnotherSimpleFormApplication.Controllers.Api
     [Route("api/[controller]")]
     public class ProjectFormsController : ControllerBase
     {
+        readonly IHttpQueryConverter<JObject> _httpQueryConverter;
+        readonly IJsonRepository _jsonRepository;
+
+        public ProjectFormsController(IHttpQueryConverter<JObject> httpQueryConverter, IJsonRepository jsonRepository)
+        {
+            _httpQueryConverter = httpQueryConverter;
+            _jsonRepository = jsonRepository;
+        }
+
         [HttpPost]
         public IActionResult Add(JObject projectForm)
         {
-            throw new NotImplementedException();
+            _jsonRepository.Add(projectForm);
+            return Ok();
         }
 
         [HttpGet]
         public IActionResult List()
         {
-            throw new NotImplementedException();
+            var query = _httpQueryConverter.Convert(Request.Query);
+            return Ok(_jsonRepository.GetList(query));
         }
     }
 }

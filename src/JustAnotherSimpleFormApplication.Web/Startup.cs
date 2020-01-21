@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JustAnotherSimpleFormApplication.Core.Services;
+using JustAnotherSimpleFormApplication.Core.Services.Abstract;
+using JustAnotherSimpleFormApplication.Data.InMemory.Repositories;
+using JustAnotherSimpleFormApplication.Data.Interface.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 
 namespace JustAnotherSimpleFormApplication
 {
@@ -27,6 +32,9 @@ namespace JustAnotherSimpleFormApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<IJsonRepository, JsonRepository>();
+            services.AddScoped<IQueryBuilderFactory, QueryBuilderFactory>();
+            services.AddScoped<IHttpQueryConverter<JObject>, HttpQueryJsonConverter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
