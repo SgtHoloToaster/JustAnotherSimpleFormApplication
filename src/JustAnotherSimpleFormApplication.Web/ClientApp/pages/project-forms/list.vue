@@ -33,7 +33,12 @@
 </template>
 
 <script>
+    import ProjectFormsApiClient from '../../api-clients/project-forms';
+
     export default {
+        created: function () {
+            ProjectFormsApiClient.getForms().then(console.log);
+        },
         data: function () {
             return {
                 forms: []

@@ -38,6 +38,7 @@
     import ProjectForm from '../../models/project-form';
     import PaymentTypeEnum from '../../enums/payment-type-enum';
     import ProjectTypeEnum from '../../enums/project-type-enum';
+    import ProjectFormsApiClient from '../../api-clients/project-forms';
 
     export default {
         components: {
@@ -57,7 +58,7 @@
         },
         methods: {
             save: function () {
-                console.log(this.form);
+                ProjectFormsApiClient.addNew(this.form);
             }
         }
     };
