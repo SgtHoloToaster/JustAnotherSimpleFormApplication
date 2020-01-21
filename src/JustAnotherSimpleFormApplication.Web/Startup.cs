@@ -32,7 +32,7 @@ namespace JustAnotherSimpleFormApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IJsonRepository, JsonRepository>();
+            services.AddScoped<IProjectFormsRepository, ProjectFormsRepository>();
             services.AddScoped<IQueryBuilderFactory, QueryBuilderFactory>();
             services.AddScoped<IHttpQueryConverter<JObject>, HttpQueryJsonConverter>();
         }

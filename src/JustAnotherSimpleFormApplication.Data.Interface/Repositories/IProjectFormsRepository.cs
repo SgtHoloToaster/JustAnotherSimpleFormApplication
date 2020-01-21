@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace JustAnotherSimpleFormApplication.Data.Interface.Repositories
 {
-    public interface IJsonRepository
+    public interface IProjectFormsRepository
     {
         void Add(JObject form);
 

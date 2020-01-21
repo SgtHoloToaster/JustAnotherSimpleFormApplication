@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace JustAnotherSimpleFormApplication.Data.InMemory.Repositories
 {
-    public class JsonRepository : IJsonRepository
+    public class ProjectFormsRepository : IProjectFormsRepository
     {
         readonly static ConcurrentBag<JObject> _data = new ConcurrentBag<JObject>();
 

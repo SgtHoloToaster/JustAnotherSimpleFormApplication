@@ -10,9 +10,9 @@ namespace JustAnotherSimpleFormApplication.Controllers.Api
     public class ProjectFormsController : ControllerBase
     {
         readonly IHttpQueryConverter<JObject> _httpQueryConverter;
-        readonly IJsonRepository _jsonRepository;
+        readonly IProjectFormsRepository _jsonRepository;
 
-        public ProjectFormsController(IHttpQueryConverter<JObject> httpQueryConverter, IJsonRepository jsonRepository)
+        public ProjectFormsController(IHttpQueryConverter<JObject> httpQueryConverter, IProjectFormsRepository jsonRepository)
         {
             _httpQueryConverter = httpQueryConverter;
             _jsonRepository = jsonRepository;
