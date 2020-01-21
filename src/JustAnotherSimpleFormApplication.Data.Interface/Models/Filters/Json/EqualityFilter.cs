@@ -9,16 +9,16 @@ namespace JustAnotherSimpleFormApplication.Data.Models.Filters.Json
     {
         public string ColumnName { get; }
 
-        public object Value { get; }
+        public string Value { get; }
 
-        public EqualityFilter(string columnName, object value)
+        public EqualityFilter(string columnName, string value)
         {
             ColumnName = columnName;
             Value = value;
         }
 
         public bool Apply(JObject model) =>
-            Equals(model[ColumnName], Value);
+            string.Equals(model.Value<string>(ColumnName), Value);
 
         public IEnumerable<JObject> Apply(IEnumerable<JObject> models) =>
             models.Where(Apply);
