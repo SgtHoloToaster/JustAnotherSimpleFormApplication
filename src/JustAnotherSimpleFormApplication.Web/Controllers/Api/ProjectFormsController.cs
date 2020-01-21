@@ -11,7 +11,14 @@ namespace JustAnotherSimpleFormApplication.Controllers.Api
     [Route("api/[controller]")]
     public class ProjectFormsController : ControllerBase
     {
-        public IActionResult Post(JObject projectForm)
+        [HttpPost]
+        public IActionResult Add(JObject projectForm)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet]
+        public IActionResult List()
         {
             throw new NotImplementedException();
         }
