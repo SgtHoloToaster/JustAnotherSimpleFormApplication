@@ -67,7 +67,7 @@
 
 <style scoped>
     .container {
-        max-width: 370px;
+        max-width: 460px;
     }
 
     .checkbox-row label {

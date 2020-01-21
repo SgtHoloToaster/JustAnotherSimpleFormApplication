@@ -12,20 +12,23 @@ const router = new VueRouter({
     base: __dirname,
     routes: [
         { path: '/project-forms/add-new', component: AddNewProjectForm },
-        { path: '/project-forms/search', component: ProjectFormsList },
+        { path: '/project-forms/list', component: ProjectFormsList },
     ]
 });
 
 new Vue({
     router,
     template: `
-    <div id="app">
-      <h1>Basic</h1>
-      <ul>
-        <li><router-link to="/project-forms/add-new">add new</router-link></li>
-        <li><router-link to="/project-forms/search">list</router-link></li>
-      </ul>
-      <router-view class="view"></router-view>
-    </div>
-  `
+        <div id="app">
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <a class="navbar-brand" href="#">Just Another Simple Form Application</a>
+                <div class="navbar-nav">
+                    <router-link to="/project-forms/add-new" class="nav-item nav-link">Add New Form</router-link>
+                    <router-link to="/project-forms/list" class="nav-item nav-link">View Forms</router-link>
+                </div>
+            </nav>
+            <div class="container page-content">
+                <router-view class="view"></router-view>
+            </div>
+        </div>`
 }).$mount('#app');
