@@ -31,14 +31,14 @@
 </template>
 
 <script>
-    import EnumSelect from '../../components/common/enum-select.vue';
-    import EnumCustomRadio from '../../components/common/enum-custom-radio-button.vue';
-    import CustomCheckbox from '../../components/common/custom-checkbox.vue';
+    import EnumSelect from '../../../components/common/enum-select.vue';
+    import EnumCustomRadio from '../../../components/common/enum-custom-radio-button.vue';
+    import CustomCheckbox from '../../../components/common/custom-checkbox.vue';
     import DatePicker from 'vuejs-datepicker'
-    import ProjectForm from '../../models/project-form';
-    import PaymentTypeEnum from '../../enums/payment-type-enum';
-    import ProjectTypeEnum from '../../enums/project-type-enum';
-    import ProjectFormsApiClient from '../../api-clients/project-forms';
+    import ProjectForm from '../../../models/project-form';
+    import PaymentTypeEnum from '../../../enums/payment-type-enum';
+    import ProjectTypeEnum from '../../../enums/project-type-enum';
+    import ProjectFormsApiClient from '../../../api-clients/project-forms';
 
     export default {
         components: {
@@ -59,6 +59,7 @@
         methods: {
             save: function () {
                 ProjectFormsApiClient.addNew(this.form);
+                this.form = new ProjectForm();
             }
         }
     };

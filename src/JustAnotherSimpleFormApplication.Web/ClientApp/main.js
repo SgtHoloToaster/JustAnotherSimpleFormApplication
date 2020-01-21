@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue';
 import VueRouter from 'vue-router';
-import AddNewProjectForm from './pages/project-forms/add-new.vue';
-import ProjectFormsList from './pages/project-forms/list.vue';
+import AddNewProjectForm from './pages/project-forms/add-new/add-new.vue';
+import ProjectFormsList from './pages/project-forms/list/list.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 
