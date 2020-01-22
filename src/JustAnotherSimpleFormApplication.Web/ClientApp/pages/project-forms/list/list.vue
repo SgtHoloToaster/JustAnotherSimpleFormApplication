@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                <ProjectFormRow v-for="form in forms" :form="form"></ProjectFormRow>
+                <ProjectFormRow v-for="(form, index) in forms" :key="index" :form="form"></ProjectFormRow>
             </tbody>
         </table>    
     </div>
