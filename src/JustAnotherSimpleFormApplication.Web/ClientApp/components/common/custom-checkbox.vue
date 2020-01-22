@@ -10,6 +10,10 @@
         props: {
             value: Boolean
         },
+        created: function () {
+            if (this.value == null)
+                this.$emit('input', false);
+        },
         methods: {
             onChange: function (event) {
                 const value = Boolean(event.target.value);
