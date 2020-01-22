@@ -46,6 +46,7 @@
     import ProjectFormsApiClient from '../../../api-clients/project-forms';
     import getValidator from '../../../models/validation/project-form-validation';
     import Validation from '../../../components/common/validation.vue';
+    import { throttle } from '../../../helpers/timing-helpers';
 
     export default {
         components: {
@@ -58,12 +59,17 @@
         created: function () {
             this.projectTypeEnum = ProjectTypeEnum;
             this.paymentTypeEnum = PaymentTypeEnum;
+            this.lazyValidation = throttle(() => this.validator.validate(this.form), 300);
         },
         data: function () {
             return {
                 form: new ProjectForm(),
                 validator: getValidator()
             };
+        },
+        updated: function () {
+            if (this.validator.haveErrors())
+                this.lazyValidation();
         },
         methods: {
             save: function () {

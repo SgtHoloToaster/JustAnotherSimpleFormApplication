@@ -32,26 +32,16 @@
         return !hasErrors;
     }
 
-    validateAndGetErrors(model) {
-        this.validate(model);
-        return this.getAllErrors();
-    }
-
-    // TODO: remove or uncomment
-    /*haveErrors() {
+    haveErrors() {
         for (var fieldName in this.validationResult) {
             if (this.validationResult[fieldName] && this.validationResult[fieldName].length)
                 return true;
         }
 
         return false;
-    }*/
+    }
 
     getErrors(fieldName) {
         return this.validationResult[fieldName] || [];
-    }
-
-    getAllErrors() {
-        return Object.values(this.validationResult);
     }
 }
