@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplication.Data.Interface", "src\JustAnotherSimpleFormApplication.Data.Interface\JustAnotherSimpleFormApplication.Data.Interface.csproj", "{86064339-324B-457A-AB16-CCD01967B541}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplication.ApiInterface", "src\JustAnotherSimpleFormApplication.ApiInterface\JustAnotherSimpleFormApplication.ApiInterface.csproj", "{9A33BC92-9B31-4F64-B6BA-67D720AF9086}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAnotherSimpleFormApplication.Data.InMemory", "src\JustAnotherSimpleFormApplication.Data.InMemory\JustAnotherSimpleFormApplication.Data.InMemory.csproj", "{6B00A429-1985-4552-B145-E23794D5EAD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplication.Data.InMemory", "src\JustAnotherSimpleFormApplication.Data.InMemory\JustAnotherSimpleFormApplication.Data.InMemory.csproj", "{6B00A429-1985-4552-B145-E23794D5EAD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{86064339-324B-457A-AB16-CCD01967B541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86064339-324B-457A-AB16-CCD01967B541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86064339-324B-457A-AB16-CCD01967B541}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A33BC92-9B31-4F64-B6BA-67D720AF9086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A33BC92-9B31-4F64-B6BA-67D720AF9086}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A33BC92-9B31-4F64-B6BA-67D720AF9086}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A33BC92-9B31-4F64-B6BA-67D720AF9086}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B00A429-1985-4552-B145-E23794D5EAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B00A429-1985-4552-B145-E23794D5EAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B00A429-1985-4552-B145-E23794D5EAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU

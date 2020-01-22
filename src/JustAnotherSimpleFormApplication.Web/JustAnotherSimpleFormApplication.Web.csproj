@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\pages\project-forms\add-new\components\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

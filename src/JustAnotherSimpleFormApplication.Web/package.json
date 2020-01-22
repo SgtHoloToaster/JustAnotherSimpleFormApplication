@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build:dev": "webpack --display-error-details",
-    "launch:dev": "dotnet run",
-    "launch:prod": "webpack --mode production && dotnet run -c Release --environment=\"Production\""
+    "launch:dev": "npm install && dotnet run",
+    "launch:prod": "npm install && webpack --mode production && dotnet run -c Release --environment=\"Production\""
   }
 }
