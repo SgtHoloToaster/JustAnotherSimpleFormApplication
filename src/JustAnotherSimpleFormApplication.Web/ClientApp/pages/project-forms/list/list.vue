@@ -1,5 +1,14 @@
 ﻿<template>
     <div>
+        <div id="project-forms-search">
+            <label>Search by name</label>
+            <div class="input-group">
+                <input v-model="searchQuery" class="form-control" type="text" />
+                <div class="input-group-append">
+                    <button class="btn btn-info" @click="search"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -27,14 +36,44 @@
             ProjectFormRow
         },
         created: function () {
-            ProjectFormsApiClient.getForms()
-                .then(async response => await response.json())
-                .then(forms => this.forms = forms);
+            this.updateFormsList();
         },
         data: function () {
             return {
-                forms: []
+                forms: [],
+                searchQuery: ''
+            }
+        },
+        methods: {
+            search: function () {
+                this.updateFormsList(this.searchQuery || undefined);
+            },
+            updateFormsList: function (name) {
+                ProjectFormsApiClient.getForms(name)
+                    .then(async response => await response.json())
+                    .then(forms => this.forms = forms);
             }
         }
     }
 </script>
+
+<style scoped>    
+    th {
+        text-align: center;
+    }
+</style>
+
+<style>
+    #project-forms-search {
+        max-width: 500px;
+        margin-bottom: 30px;
+        display: flex;
+    }
+
+    #project-forms-search label {
+        white-space: nowrap;
+        margin-right: 10px;
+        line-height: 34px;    
+        margin-bottom: 0px;
+    }
+</style>

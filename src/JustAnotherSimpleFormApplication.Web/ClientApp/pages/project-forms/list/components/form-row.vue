@@ -48,3 +48,9 @@
         }
     }
 </script>
+
+<style scoped>
+    td {
+        text-align: center;
+    }
+</style>
