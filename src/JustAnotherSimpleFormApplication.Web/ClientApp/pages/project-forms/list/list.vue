@@ -3,7 +3,7 @@
         <div id="project-forms-search">
             <label>Search by name</label>
             <div class="input-group">
-                <input v-model="searchQuery" class="form-control" type="text" />
+                <input v-model="searchQuery" class="form-control" type="text" @keyup.enter="search" />
                 <div class="input-group-append">
                     <button class="btn btn-info" @click="search"><i class="fa fa-search"></i></button>
                 </div>
@@ -30,6 +30,7 @@
 <script>
     import ProjectFormsApiClient from '../../../api-clients/project-forms';
     import ProjectFormRow from './components/form-row.vue';
+    import { throttle } from '../../../helpers/timing-helpers';
 
     export default {
         components: {
@@ -37,6 +38,7 @@
         },
         created: function () {
             this.updateFormsList();
+            this.lazySearch = throttle(this.search, 500);
         },
         data: function () {
             return {
@@ -52,6 +54,11 @@
                 ProjectFormsApiClient.getForms(name)
                     .then(async response => await response.json())
                     .then(forms => this.forms = forms);
+            }
+        },
+        watch: {
+            searchQuery: function () {
+                this.lazySearch();
             }
         }
     }
