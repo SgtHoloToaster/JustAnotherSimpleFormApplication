@@ -1,4 +1,4 @@
-﻿class Validator {
+﻿export default class Validator {
     constructor() {
         this.validationResult = {};
         this.validations = {};

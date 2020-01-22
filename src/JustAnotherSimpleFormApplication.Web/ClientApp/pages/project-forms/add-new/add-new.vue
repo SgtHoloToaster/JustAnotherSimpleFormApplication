@@ -4,22 +4,27 @@
             <div class="row">
                 <label>Project Name</label>
                 <input class="form-control" v-model="form.name" />
+                <Validation field-name="name" :validator="validator"></Validation>
             </div>
             <div class="row">
                 <label>Project Type</label>
                 <EnumSelect class="form-control" v-model="form.projectType" :options="projectTypeEnum"></EnumSelect>
+                <Validation field-name="projectType" :validator="validator"></Validation>
             </div>
             <div class="row">
                 <label>Contract Start Date</label>
                 <DatePicker v-model="form.contractStartDate" class="full-width" input-class="form-control"></DatePicker>
+                <Validation field-name="contractStartDate" :validator="validator"></Validation>
             </div>
             <div class="row">
                 <label>Contract End Date</label>
                 <DatePicker v-model="form.contractEndDate" class="full-width" input-class="form-control"></DatePicker>
+                <Validation field-name="contractEndDate" :validator="validator"></Validation>
             </div>
             <div class="row">
                 <label>Payment Type</label>
                 <EnumCustomRadio v-model="form.paymentType" :options="paymentTypeEnum" class="full-width flex" />
+                <Validation field-name="paymentType" :validator="validator"></Validation>
             </div>
             <div class="row checkbox-row">
                 <label>Is a former client?</label>
@@ -39,13 +44,16 @@
     import PaymentTypeEnum from '../../../enums/payment-type-enum';
     import ProjectTypeEnum from '../../../enums/project-type-enum';
     import ProjectFormsApiClient from '../../../api-clients/project-forms';
+    import getValidator from '../../../models/validation/project-form-validation';
+    import Validation from '../../../components/common/validation.vue';
 
     export default {
         components: {
             CustomCheckbox,
             DatePicker,
             EnumSelect,
-            EnumCustomRadio
+            EnumCustomRadio,
+            Validation
         },
         created: function () {
             this.projectTypeEnum = ProjectTypeEnum;
@@ -53,11 +61,15 @@
         },
         data: function () {
             return {
-                form: new ProjectForm()
+                form: new ProjectForm(),
+                validator: getValidator()
             };
         },
         methods: {
             save: function () {
+                if (!this.validator.validate(this.form))
+                    return;
+
                 ProjectFormsApiClient.addNew(this.form);
                 this.form = new ProjectForm();
             }

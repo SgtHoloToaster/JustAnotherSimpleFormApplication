@@ -1,13 +1,13 @@
 ﻿<template>
     <span style="display:grid;">
-        <small v-for="error in validator.getErrors(fieldName)" class="validatior-error-text">{{error}}</small>
+        <small v-for="error in validator.getErrors(fieldName)" class="validation-error-text">{{error}}</small>
     </span>
 </template>
 
 <script>
     export default {
         props: {
-            name: {
+            fieldName: {
                 type: String,
                 required: true
             },
