@@ -47,6 +47,8 @@
     import getValidator from '../../../models/validation/project-form-validation';
     import Validation from '../../../components/common/validation.vue';
     import { throttle } from '../../../helpers/timing-helpers';
+    import Notification from '../../../helpers/notification';
+
 
     export default {
         components: {
@@ -78,6 +80,7 @@
 
                 ProjectFormsApiClient.addNew(this.form);
                 this.form = new ProjectForm();
+                Notification.success('The project form has been successfuly added');
             }
         }
     };
