@@ -7,7 +7,7 @@ import './styles/main.css';
 
 Vue.use(VueRouter);
 
-const routes = Object.freeze({
+const urls = Object.freeze({
     projectForms: {
         add: '/project-forms/add-new',
         list: '/project-forms/list'
@@ -18,9 +18,9 @@ const router = new VueRouter({
     mode: 'history',
     base: __dirname,
     routes: [
-        { path: routes.projectForms.add, component: AddNewProjectForm },
-        { path: routes.projectForms.list, component: ProjectFormsList },
-        { path: '*', redirect: routes.projectForms.add }
+        { path: urls.projectForms.add, component: AddNewProjectForm },
+        { path: urls.projectForms.list, component: ProjectFormsList },
+        { path: '*', redirect: urls.projectForms.add }
     ]
 });
 
@@ -31,8 +31,8 @@ new Vue({
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <a class="navbar-brand" href="#">Just Another Simple Form Application</a>
                 <div class="navbar-nav">
-                    <router-link to="${routes.projectForms.add}" class="nav-item nav-link">Add New Form</router-link>
-                    <router-link to="${routes.projectForms.list}" class="nav-item nav-link">View Forms</router-link>
+                    <router-link to="${urls.projectForms.add}" class="nav-item nav-link">Add New Form</router-link>
+                    <router-link to="${urls.projectForms.list}" class="nav-item nav-link">View Forms</router-link>
                 </div>
             </nav>
             <div class="container page-content">
