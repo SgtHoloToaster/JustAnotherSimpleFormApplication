@@ -27,6 +27,6 @@ namespace JustAnotherSimpleFormApplication.Core.Services
         }
 
         private IFilter<JObject> GetFilter(KeyValuePair<string, StringValues> keyValuePair) =>
-            new EqualityFilter(keyValuePair.Key, keyValuePair.Value.ToString());
+            new ContainsFilter(keyValuePair.Key, keyValuePair.Value.ToString());
     }
 }

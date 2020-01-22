@@ -5,20 +5,26 @@ using System.Linq;
 
 namespace JustAnotherSimpleFormApplication.Data.Models.Filters.Json
 {
-    public class EqualityFilter : IFilter<JObject>
+    public class ContainsFilter : IFilter<JObject>
     {
         public string ColumnName { get; }
 
         public string Value { get; }
 
-        public EqualityFilter(string columnName, string value)
+        public ContainsFilter(string columnName, string value)
         {
             ColumnName = columnName;
             Value = value;
         }
 
-        public bool Apply(JObject model) =>
-            string.Equals(model.Value<string>(ColumnName), Value);
+        public bool Apply(JObject model)
+        {
+            if (string.IsNullOrWhiteSpace(Value))
+                return true;
+
+            var modelValue = model.Value<string>(ColumnName);
+            return !string.IsNullOrWhiteSpace(modelValue) && modelValue.Contains(Value);
+        }
 
         public IEnumerable<JObject> Apply(IEnumerable<JObject> models) =>
             models.Where(Apply);
