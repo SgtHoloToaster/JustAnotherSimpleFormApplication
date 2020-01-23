@@ -1,12 +1,9 @@
 ﻿<template>
     <div>
         <div id="project-forms-search">
-            <label>Search by name</label>
-            <div class="input-group">
-                <input v-model="searchQuery" class="form-control" type="text" @keyup.enter="search" />
-                <div class="input-group-append">
-                    <button class="btn btn-info" @click="search"><i class="fa fa-search"></i></button>
-                </div>
+            <label>Filter by name</label>
+            <div>
+                <input v-model="searchQuery" class="form-control" type="text" @keyup.enter="search" placeholder="Start Typing" />
             </div>
         </div>
         <table class="table">

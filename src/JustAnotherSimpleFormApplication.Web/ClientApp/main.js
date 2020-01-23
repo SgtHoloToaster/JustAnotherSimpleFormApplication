@@ -5,7 +5,6 @@ import AddNewProjectForm from './pages/project-forms/add-new/add-new.vue';
 import ProjectFormsList from './pages/project-forms/list/list.vue';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
 import './styles/main.css';
 
 Vue.use(VueRouter);
