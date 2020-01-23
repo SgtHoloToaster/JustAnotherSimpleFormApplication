@@ -3,7 +3,6 @@
 export default function getValidator() {
     return new Validator()
         .add('name', (model, errors) => {
-            console.log(model.name);
             if (!model.name)
                 errors.push('Please specify Project Name');
         })
