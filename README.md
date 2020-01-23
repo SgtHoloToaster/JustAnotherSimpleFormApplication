@@ -1,18 +1,18 @@
-# Инструкция по запуску
-Для запуска приложения необходимы nodejs и dotnet.
+# РРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕ Р·Р°РїСѓСЃРєСѓ
+Р”Р»СЏ Р·Р°РїСѓСЃРєР° РїСЂРёР»РѕР¶РµРЅРёСЏ РЅРµРѕР±С…РѕРґРёРјС‹ nodejs Рё dotnet.
 
-Запуск приложения можно осуществить выполнением launch-me.bat. Что происходит в этом случае:
-- устанавливаются npm-пакеты (npm install)
-- с помощью Webpack собирается бандл в production-режиме (webpack --mode production)
-- собирается и запускается приложение (dotnet run -c Release --environment="Production")
-
-При желании, команды можно выполнить вручную. Для этого необходимо перейти в директорию src/JustAnotherSimpleFormApplication.Web и выполнить команды:
-для Release:
-npm install
-npm run build:prod
-dotnet run -c Release --environment="Production" 
-
-для Dev:
-npm install
-npm run build:dev
-dotnet run
+Р—Р°РїСѓСЃРє РїСЂРёР»РѕР¶РµРЅРёСЏ РјРѕР¶РЅРѕ РѕСЃСѓС‰РµСЃС‚РІРёС‚СЊ РІС‹РїРѕР»РЅРµРЅРёРµРј launch-me.bat. Р§С‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚ РІ СЌС‚РѕРј СЃР»СѓС‡Р°Рµ:
+- СѓСЃС‚Р°РЅР°РІР»РёРІР°СЋС‚СЃСЏ npm-РїР°РєРµС‚С‹ (npm install)
+- СЃ РїРѕРјРѕС‰СЊСЋ Webpack СЃРѕР±РёСЂР°РµС‚СЃСЏ Р±Р°РЅРґР» РІ production-СЂРµР¶РёРјРµ (webpack --mode production)
+- СЃРѕР±РёСЂР°РµС‚СЃСЏ Рё Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РїСЂРёР»РѕР¶РµРЅРёРµ (dotnet run -c Release --environment="Production")  
+  
+РџСЂРё Р¶РµР»Р°РЅРёРё, РєРѕРјР°РЅРґС‹ РјРѕР¶РЅРѕ РІС‹РїРѕР»РЅРёС‚СЊ РІСЂСѓС‡РЅСѓСЋ. Р”Р»СЏ СЌС‚РѕРіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР№С‚Рё РІ РґРёСЂРµРєС‚РѕСЂРёСЋ src/JustAnotherSimpleFormApplication.Web Рё РІС‹РїРѕР»РЅРёС‚СЊ РєРѕРјР°РЅРґС‹:  
+РґР»СЏ Release:  
+npm install  
+npm run build:prod  
+dotnet run -c Release --environment="Production"  
+  
+РґР»СЏ Dev:  
+npm install  
+npm run build:dev  
+dotnet run  
