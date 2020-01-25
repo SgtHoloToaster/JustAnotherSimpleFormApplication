@@ -27,7 +27,7 @@
 <script>
     import ProjectFormsApiClient from '../../../api-clients/project-forms';
     import ProjectFormRow from './components/form-row.vue';
-    import { throttle } from '../../../helpers/timing-helpers';
+    import { debounce } from '../../../helpers/timing-helpers';
 
     export default {
         components: {
@@ -35,7 +35,7 @@
         },
         created: function () {
             this.updateFormsList();
-            this.lazySearch = throttle(this.search, 500);
+            this.lazySearch = debounce(this.search, 500);
         },
         data: function () {
             return {
