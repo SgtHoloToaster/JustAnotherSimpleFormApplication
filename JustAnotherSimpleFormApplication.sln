@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustAnotherSimpleFormApplication.Data.InMemory", "src\JustAnotherSimpleFormApplication.Data.InMemory\JustAnotherSimpleFormApplication.Data.InMemory.csproj", "{6B00A429-1985-4552-B145-E23794D5EAD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAnotherSimpleFormApplication.Core.Tests", "src\JustAnotherSimpleFormApplication.Core.Tests\JustAnotherSimpleFormApplication.Core.Tests.csproj", "{FF2EADC1-2987-44C3-9B3B-211217BB4DFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAnotherSimpleFormApplication.Core.Tests", "tests\JustAnotherSimpleFormApplication.Core.Tests\JustAnotherSimpleFormApplication.Core.Tests.csproj", "{FF2EADC1-2987-44C3-9B3B-211217BB4DFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

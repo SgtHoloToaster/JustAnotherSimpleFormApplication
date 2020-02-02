@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JustAnotherSimpleFormApplication.Core\JustAnotherSimpleFormApplication.Core.csproj" />
+    <ProjectReference Include="..\..\src\JustAnotherSimpleFormApplication.Core\JustAnotherSimpleFormApplication.Core.csproj" />
   </ItemGroup>
 
 </Project>
