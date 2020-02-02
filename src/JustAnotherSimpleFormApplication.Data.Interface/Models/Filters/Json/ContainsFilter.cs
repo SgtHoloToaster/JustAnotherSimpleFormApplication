@@ -28,5 +28,32 @@ namespace JustAnotherSimpleFormApplication.Data.Models.Filters.Json
 
         public IEnumerable<JObject> Apply(IEnumerable<JObject> models) =>
             models.Where(Apply);
+
+        public override bool Equals(object obj) =>
+            Equals(obj as ContainsFilter);
+
+        public bool Equals(ContainsFilter filter)
+        {
+            if (filter == null)
+                return false;
+
+            if (ReferenceEquals(this, filter))
+                return true;
+
+            return Equals(ColumnName, filter.ColumnName)
+                && Equals(Value, filter.Value);
+        }
+
+        public override int GetHashCode()
+        {
+            var hash = 17;
+            unchecked
+            {
+                hash *= 23 + (ColumnName?.GetHashCode() ?? 0);
+                hash *= 23 + (ColumnName?.GetHashCode() ?? 0);
+            }
+
+            return hash;
+        }
     }
 }
