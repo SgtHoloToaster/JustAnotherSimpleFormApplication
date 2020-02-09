@@ -29,9 +29,11 @@
     "webpack-hot-middleware": "2.25.0"
   },
   "scripts": {
-    "build:dev": "webpack --display-error-details",
+    "build:dev": "webpack --mode development --display-error-details",
     "build:prod": "webpack --mode production",
     "launch:dev": "npm install && dotnet run",
-    "launch:prod": "npm install && webpack --mode production && dotnet run -c Release --environment=\"Production\""
+    "launch:prod": "npm install && webpack --mode production && dotnet run -c Release --environment=\"Production\"",
+    "publish:dev": "npm run build:dev && dotnet publish -o publish",
+    "publish:prod": "npm run build:prod && dotnet publish -c Release -o publish"
   }
 }
